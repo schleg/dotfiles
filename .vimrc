@@ -36,6 +36,8 @@ endif
 
 set clipboard=unnamed
 
+set cursorline
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -116,7 +118,7 @@ autocmd VimEnter * wincmd p
 
 " set right margin
 set colorcolumn=80
-hi ColorColumn guibg=#2d2d2d
+hi ColorColumn ctermbg=7
 
 autocmd filetype css setlocal equalprg=csstidy\ -\ --silent=true
 

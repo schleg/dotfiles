@@ -40,3 +40,5 @@ export PATH="/Users/schleg/.rbenv/shims:/Users/schleg/.rbenv/bin:/usr/bin:/bin:/
 alias tmux="TERM=screen-256color-bce tmux"
 . resty
 export EDITOR="vim"
+
+alias bx="bundle exec"
