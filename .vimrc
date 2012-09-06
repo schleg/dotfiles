@@ -34,8 +34,6 @@ if &t_Co > 2 || has("gui_running")
   set guifont=Inconsolata-dz:h14
 endif
 
-set clipboard=unnamed
-
 set cursorline
 
 " Only do this part when compiled with support for autocommands.
