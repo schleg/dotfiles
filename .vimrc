@@ -1,5 +1,6 @@
 call pathogen#infect()
 
+" https://github.com/kien/ctrlp.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Use Vim settings, rather then Vi settings
@@ -29,8 +30,10 @@ set showcmd		" display incomplete commands
 
 syntax on
 syntax enable
-let g:solarized_termtrans = 1
 set background=dark
+
+" http://ethanschoonover.com/solarized 
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 set cursorline
@@ -113,4 +116,7 @@ noremap! <Right> <Esc>
 
 map <Esc>[B <Down>
 
-command CTF CommandTFlush
+nnoremap <F3> :NumbersToggle<CR>
+
+" https://github.com/shougo/neocomplcache
+let g:neocomplcache_enable_at_startup = 1
