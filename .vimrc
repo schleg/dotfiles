@@ -1,5 +1,7 @@
 call pathogen#infect()
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 " Use Vim settings, rather then Vi settings
 " This must be first because it changes other options as a side effect.
 set nocompatible
@@ -25,14 +27,11 @@ set backspace=indent,eol,start
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-  " set guifont=Monaco:h14
-  set guifont=Inconsolata-dz:h14
-endif
+syntax on
+syntax enable
+let g:solarized_termtrans = 1
+set background=dark
+colorscheme solarized
 
 set cursorline
 
@@ -80,17 +79,6 @@ set tabstop=2
 
 set hls
 
-if has("gui_running")
-  :set lines=100
-  :set columns=171
-  :set cursorline
-  :set guifont=Consolas:h13
-endif
-
-if has("gui_running")
-    set guioptions=egmrt
-endif
-
 if has("mouse")
   set mouse=a
 endif
@@ -99,7 +87,7 @@ endif
 autocmd VimEnter * wincmd p
 
 set colorcolumn=80
-hi ColorColumn ctermbg=7
+hi ColorColumn guibg=DarkGray 
 
 autocmd filetype css setlocal equalprg=csstidy\ -\ --silent=true
 
