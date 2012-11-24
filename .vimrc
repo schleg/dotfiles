@@ -120,3 +120,6 @@ nnoremap <F3> :NumbersToggle<CR>
 
 " https://github.com/shougo/neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+
+" enable single-click
+let NERDTreeMouseMode = 2
