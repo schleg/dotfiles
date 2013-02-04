@@ -123,3 +123,6 @@ let g:neocomplcache_enable_at_startup = 1
 
 " enable single-click
 let NERDTreeMouseMode = 2
+
+" https://github.com/Lokaltog/vim-easymotion
+let g:EasyMotion_leader_key = '<Leader>'
