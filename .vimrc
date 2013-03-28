@@ -28,6 +28,8 @@ set backspace=indent,eol,start
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 
+let slim = "$VIM/syntax/slim.vim"
+
 syntax on
 syntax enable
 set background=dark
@@ -126,3 +128,6 @@ let NERDTreeMouseMode = 2
 
 " https://github.com/Lokaltog/vim-easymotion
 let g:EasyMotion_leader_key = '<Leader>'
+
+au BufRead,BufNewFile *.slim set filetype=slim
+au! Syntax slim source "$VIM/syntax.slim.vim"
