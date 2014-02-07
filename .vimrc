@@ -131,3 +131,10 @@ let g:EasyMotion_leader_key = '<Leader>'
 
 au BufRead,BufNewFile *.slim set filetype=slim
 au! Syntax slim source "$VIM/syntax.slim.vim"
+
+" mouse support in tmux
+set mouse+=a
+if &term =~ '^screen'
+  " tmux knows the extended mouse mode
+  set ttymouse=xterm2
+endif
