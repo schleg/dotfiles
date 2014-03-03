@@ -81,7 +81,7 @@ set incsearch
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
-
+set nowrap
 set hls
 
 if has("mouse")
@@ -138,3 +138,5 @@ if &term =~ '^screen'
   " tmux knows the extended mouse mode
   set ttymouse=xterm2
 endif
+
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
