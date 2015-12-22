@@ -140,3 +140,5 @@ if &term =~ '^screen'
 endif
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
