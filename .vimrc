@@ -1,5 +1,7 @@
 call pathogen#infect()
 
+set encoding=utf-8
+
 " https://github.com/kien/ctrlp.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
@@ -39,6 +41,8 @@ let g:solarized_termtrans = 1
 colorscheme solarized
 
 set cursorline
+
+set number
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -129,6 +133,8 @@ let NERDTreeMouseMode = 2
 " https://github.com/Lokaltog/vim-easymotion
 let g:EasyMotion_leader_key = '<Leader>'
 
+let g:jsx_ext_required = 0
+
 au BufRead,BufNewFile *.slim set filetype=slim
 au! Syntax slim source "$VIM/syntax.slim.vim"
 
@@ -140,5 +146,17 @@ if &term =~ '^screen'
 endif
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+
+set statusline=%F:%l,%c
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4

@@ -42,3 +42,5 @@ alias tmux="TERM=screen-256color-bce tmux"
 export EDITOR="vim"
 
 alias bx="bundle exec"
+
+fpath=(/usr/local/share/zsh-completions $fpath)
