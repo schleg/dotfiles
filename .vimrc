@@ -4,6 +4,9 @@ set encoding=utf-8
 
 " https://github.com/kien/ctrlp.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=40
+let g:ctrlp_working_path_mode='' 
 
 " Use Vim settings, rather then Vi settings
 " This must be first because it changes other options as a side effect.
@@ -77,16 +80,14 @@ else
 endif " has("autocmd")
 
 " Sane editing configuration
-set expandtab
 set autoindent
 set laststatus=2
 set showmatch
 set incsearch
 set softtabstop=2
-set shiftwidth=2
-set tabstop=2
 set nowrap
 set hls
+set tabstop=2 shiftwidth=2 expandtab
 
 if has("mouse")
   set mouse=a
@@ -147,16 +148,21 @@ endif
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
-set statusline=%F:%l,%c
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
+" set statusline=%F:%l,%c
+" 
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+" let g:syntastic_javascript_eslint_exec = 'eslint'
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['eslint']
 
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+let g:vimrubocop_config = './.rubocop.yml'
