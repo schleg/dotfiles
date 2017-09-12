@@ -6,7 +6,7 @@ set encoding=utf-8
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
-let g:ctrlp_working_path_mode='' 
+let g:ctrlp_working_path_mode=''
 
 " Use Vim settings, rather then Vi settings
 " This must be first because it changes other options as a side effect.
@@ -39,7 +39,7 @@ syntax on
 syntax enable
 set background=dark
 
-" http://ethanschoonover.com/solarized 
+" http://ethanschoonover.com/solarized
 let g:solarized_termtrans = 1
 colorscheme solarized
 
@@ -97,7 +97,7 @@ endif
 autocmd VimEnter * wincmd p
 
 set colorcolumn=80
-hi ColorColumn guibg=DarkGray 
+hi ColorColumn guibg=DarkGray
 
 autocmd filetype css setlocal equalprg=csstidy\ -\ --silent=true
 
@@ -125,8 +125,8 @@ map <Esc>[B <Down>
 
 nnoremap <F3> :NumbersToggle<CR>
 
-" https://github.com/shougo/neocomplcache
-let g:neocomplcache_enable_at_startup = 1
+" https://github.com/Shougo/neocomplete.vim
+let g:neocomplete#enable_at_startup = 1
 
 " enable single-click
 let NERDTreeMouseMode = 2
@@ -149,11 +149,11 @@ endif
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 
 " set statusline=%F:%l,%c
-" 
+"
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
-" 
+"
 " let g:syntastic_javascript_eslint_exec = 'eslint'
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
