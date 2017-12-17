@@ -99,6 +99,8 @@ autocmd VimEnter * wincmd p
 set colorcolumn=80
 hi ColorColumn guibg=DarkGray
 
+highlight ExtraWhitespace ctermbg=DarkGray guibg=DarkGray
+
 autocmd filetype css setlocal equalprg=csstidy\ -\ --silent=true
 
 function! InsertTabWrapper()
@@ -166,3 +168,10 @@ au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 let g:vimrubocop_config = './.rubocop.yml'
+let g:syntastic_ruby_rubocop_exec = '/Users/tyler/.rbenv/shims/ruby /Users/tyler/.rbenv/shims/rubocop'
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+let g:tsuquyomi_completion_detail = 1
