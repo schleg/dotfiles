@@ -71,6 +71,9 @@ if has("autocmd")
     \   exe "normal g`\"" |
     \ endif
 
+  autocmd GUIEnter * set vb t_vb=
+  autocmd GUIEnter * set guifont=Pragmata:h14
+
   augroup END
 
 else
@@ -175,3 +178,27 @@ if executable('ag')
 endif
 
 let g:tsuquyomi_completion_detail = 1
+set omnifunc=syntaxcomplete#Complete
+
+autocmd! GUIEnter * set vb t_vb=
+autocmd! GUIEnter * set guifont=Pragmata:h14
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+autocmd BufWritePre * %s/\s\+$//e
