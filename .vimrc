@@ -8,8 +8,7 @@ let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
 let g:ctrlp_working_path_mode=''
 
-" Use Vim settings, rather then Vi settings
-" This must be first because it changes other options as a side effect.
+" Use vim settings, not vi
 set nocompatible
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
@@ -27,13 +26,14 @@ set smartcase
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" allow backspacing over everything in insert mode
+" Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
+" Show the cursor position all the time
+set ruler
 
-let slim = "$VIM/syntax/slim.vim"
+" Display incomplete commands
+set showcmd
 
 syntax on
 syntax enable
@@ -130,21 +130,15 @@ map <Esc>[B <Down>
 
 nnoremap <F3> :NumbersToggle<CR>
 
-" https://github.com/Shougo/neocomplete.vim
-let g:neocomplete#enable_at_startup = 1
-
 " enable single-click
 let NERDTreeMouseMode = 2
-
-" https://github.com/Lokaltog/vim-easymotion
-let g:EasyMotion_leader_key = '<Leader>'
 
 let g:jsx_ext_required = 0
 
 au BufRead,BufNewFile *.slim set filetype=slim
 au! Syntax slim source "$VIM/syntax.slim.vim"
 
-" mouse support in tmux
+" Mouse support in tmux
 set mouse+=a
 if &term =~ '^screen'
   " tmux knows the extended mouse mode
@@ -152,19 +146,6 @@ if &term =~ '^screen'
 endif
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-
-" set statusline=%F:%l,%c
-"
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-"
-" let g:syntastic_javascript_eslint_exec = 'eslint'
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_javascript_checkers = ['eslint']
 
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
